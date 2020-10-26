@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <TextView
+        android:id="@+id/starting_point"
+        android:layout_width="102dp"
+        android:layout_height="20dp"
+        android:text="Adelphi"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="160dp" />
+
+    <TextView
+        android:id="@+id/commute_box"
+        android:layout_width="102dp"
+        android:layout_height="20dp"
+        android:text="Walk"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="216dp" />
+
+    <TextView
+        android:id="@+id/commute_box2"
+        android:layout_width="166dp"
+        android:layout_height="20dp"
+        android:text="Bus Stop (G7) "
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="286dp" />
+
+    <TextView
+        android:id="@+id/Destination"
+        android:layout_width="111dp"
+        android:layout_height="21dp"
+        android:text="Ichbrae Road"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="355dp" />
+
+    <TextView
+        android:id="@+id/Journey_title"
+        android:layout_width="93dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="68dp"
+        android:text="Journey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Start_point_number"
+        android:layout_width="186dp"
+        android:layout_height="42dp"
+        android:ems="43"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="152dp"
+        tools:text="10 min" />
+
+    <EditText
+        android:id="@+id/Walk_box"
+        android:layout_width="186dp"
+        android:layout_height="42dp"
+        android:ems="43"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="203dp"
+        tools:text="5 Min" />
+
+    <EditText
+        android:id="@+id/Bus_box"
+        android:layout_width="186dp"
+        android:layout_height="42dp"
+        android:ems="43"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="198dp"
+        tools:layout_editor_absoluteY="273dp"
+        tools:text="16 Min" />
+
+    <EditText
+        android:id="@+id/destination_box"
+        android:layout_width="186dp"
+        android:layout_height="42dp"
+        android:ems="43"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="198dp"
+        tools:layout_editor_absoluteY="344dp"
+        tools:text="23 Min" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
