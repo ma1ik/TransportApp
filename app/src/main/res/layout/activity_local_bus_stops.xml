@@ -6,18 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".local_bus_stops">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/timetableTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/local_bus_stops"
@@ -28,7 +18,7 @@
         app:layout_constraintVertical_bias="0.143" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/localBusStopFirst"
         android:layout_width="293dp"
         android:layout_height="42dp"
         android:autofillHints=""
@@ -40,10 +30,11 @@
         app:layout_constraintHorizontal_bias="0.313"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.305" />
+        app:layout_constraintVertical_bias="0.305"
+        tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/localBusStopSecond"
         android:layout_width="297dp"
         android:layout_height="39dp"
         android:autofillHints=""
@@ -55,10 +46,11 @@
         app:layout_constraintHorizontal_bias="0.329"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.422"
+        tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/localBusStopThird"
         android:layout_width="303dp"
         android:layout_height="39dp"
         android:autofillHints=""
@@ -70,5 +62,18 @@
         app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.543" />
+        app:layout_constraintVertical_bias="0.543"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/localBusStopHomeButton"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:text="@string/home_page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.957" />
 </androidx.constraintlayout.widget.ConstraintLayout>

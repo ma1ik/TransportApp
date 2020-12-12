@@ -6,19 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".journey">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
-
     <TextView
-        android:id="@+id/starting_point"
+        android:id="@+id/journeyFirst"
         android:layout_width="100dp"
         android:layout_height="24dp"
         android:layout_gravity="center_horizontal"
@@ -33,7 +22,7 @@
         app:layout_constraintVertical_bias="0.155" />
 
     <TextView
-        android:id="@+id/commute_box"
+        android:id="@+id/journeySecond"
         android:layout_width="99dp"
         android:layout_height="25dp"
         android:layout_gravity="center_horizontal"
@@ -48,9 +37,11 @@
         app:layout_constraintVertical_bias="0.276" />
 
     <TextView
-        android:id="@+id/commute_box2"
+        android:id="@+id/journeyThird"
         android:layout_width="104dp"
         android:layout_height="25dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
         android:text="@string/bus_stop_g7"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,12 +49,10 @@
         app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.385"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal" />
+        app:layout_constraintVertical_bias="0.385" />
 
     <TextView
-        android:id="@+id/Destination"
+        android:id="@+id/journeyFourth"
         android:layout_width="103dp"
         android:layout_height="24dp"
         android:layout_gravity="center_horizontal"
@@ -78,7 +67,7 @@
         app:layout_constraintVertical_bias="0.521" />
 
     <TextView
-        android:id="@+id/Journey_title"
+        android:id="@+id/journeyTitle"
         android:layout_width="93dp"
         android:layout_height="35dp"
         android:gravity="center"
@@ -92,7 +81,7 @@
         app:layout_constraintVertical_bias="0.05" />
 
     <EditText
-        android:id="@+id/Start_point_number"
+        android:id="@+id/journeyFirstTime"
         android:layout_width="220dp"
         android:layout_height="39dp"
         android:autofillHints=""
@@ -104,11 +93,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.137"
-        tools:text="10 min"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        tools:text="10 min" />
 
     <EditText
-        android:id="@+id/Walk_box"
+        android:id="@+id/journeySecondTime"
         android:layout_width="224dp"
         android:layout_height="45dp"
         android:ems="43"
@@ -120,11 +109,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.272"
-        tools:text="5 Min"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        tools:text="5 Min" />
 
     <EditText
-        android:id="@+id/destination_box"
+        android:id="@+id/journeyFourthTime"
         android:layout_width="238dp"
         android:layout_height="45dp"
         android:autofillHints=""
@@ -136,11 +125,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.521"
-        tools:text="23 Min"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        tools:text="23 Min" />
 
     <EditText
-        android:id="@+id/Bus_box"
+        android:id="@+id/journeyThirdTime"
         android:layout_width="231dp"
         android:layout_height="39dp"
         android:ems="43"
@@ -152,6 +141,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.393"
-        tools:text="16 Min"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        tools:text="16 Min" />
+
+    <Button
+        android:id="@+id/journeyHomePageButton"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:text="@string/home_page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 </androidx.constraintlayout.widget.ConstraintLayout>

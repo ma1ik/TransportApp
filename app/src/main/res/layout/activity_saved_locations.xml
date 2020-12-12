@@ -6,18 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".saved_locations">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/timetableTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/saved_locations"
@@ -28,7 +18,7 @@
         app:layout_constraintVertical_bias="0.133" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/timetableBusStatus2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/saved_location"
@@ -40,7 +30,7 @@
         app:layout_constraintVertical_bias="0.258" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/savedLocationFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/union_st_to_rgu"
@@ -52,7 +42,7 @@
         app:layout_constraintVertical_bias="0.358" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/favrouiteBusStopColumn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/favrouite_bus_stop"
@@ -64,7 +54,7 @@
         app:layout_constraintVertical_bias="0.258" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/favrouiteBusStopFirst"
         android:layout_width="89dp"
         android:layout_height="19dp"
         android:text="@string/bus_1"
@@ -76,7 +66,7 @@
         app:layout_constraintVertical_bias="0.36" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/durationColumn"
         android:layout_width="60dp"
         android:layout_height="22dp"
         android:text="@string/duration"
@@ -88,7 +78,7 @@
         app:layout_constraintVertical_bias="0.258" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/durationFirst"
         android:layout_width="63dp"
         android:layout_height="22dp"
         android:text="@string/_40_mins"
@@ -98,4 +88,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.361" />
+
+    <Button
+        android:id="@+id/savedLocationsHomePageButton"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:text="@string/home_page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.957" />
 </androidx.constraintlayout.widget.ConstraintLayout>

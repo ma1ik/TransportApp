@@ -34,4 +34,9 @@
     <string name="duration">Duration</string>
     <string name="_40_mins">40 Mins</string>
     <string name="button">Button</string>
+    <string name="saved_locations_button">saved locations</string>
+    <string name="timetableButton">timetable</string>
+    <string name="submitButton">submit</string>
+    <string name="search_title">Search</string>
+    <string name="home_page">Home page</string>
 </resources>
