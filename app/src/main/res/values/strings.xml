@@ -39,4 +39,6 @@
     <string name="submitButton">submit</string>
     <string name="search_title">Search</string>
     <string name="home_page">Home page</string>
+    <string name="enter_starting_point">Enter starting point</string>
+    <string name="enter_destination_point">Enter destination point</string>
 </resources>
