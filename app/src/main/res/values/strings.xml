@@ -44,4 +44,6 @@
     <string name="localBusStop_3">#3</string>
     <string name="localBusStop_2">#2</string>
     <string name="localBusStop_1">#1</string>
+    <string name="rv_local_bus_button">Button</string>
+    <string name="parse_button">parse</string>
 </resources>

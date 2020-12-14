@@ -104,11 +104,7 @@ public class home_page extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onResponse(String response) {
                 Log.d(TAG, "Success" + response);
-                TaskJsonConverter converter = new TaskJsonConverter();
-                List<local_bus_stops> bus_stops = converter.convertJsonStringToTask(response);
-                RecyclerView.Adapter adapter = new RecyclerViewAdapter(getApplicationContext(), local_bus_stops);
-                // Set the recycler views adapter
-                recyclerView.setAdapter(adapter);
+
 
             }
         }, new Response.ErrorListener() {
@@ -160,11 +156,6 @@ public class home_page extends AppCompatActivity implements View.OnClickListener
             return local_bus_stops;
         }
     }
-
-
-
-
-
 
 }
 
