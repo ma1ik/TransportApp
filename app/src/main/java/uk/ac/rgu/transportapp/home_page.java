@@ -1,20 +1,39 @@
 package uk.ac.rgu.transportapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.Task;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class home_page extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = home_page.class.getCanonicalName();
+
     //Initialise variables
     EditText etSource, etDestination;
     Button btnTrack;
+    private List<StringRequest> requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,12 +97,38 @@ public class home_page extends AppCompatActivity implements View.OnClickListener
         }
     }
 
+    public void getTasksFromCloud(){
+        String url = "http://transportapi.com/v3/uk/places.json?lat=57.1533753&lon=-2.1093067&type=bus_stop&app_id=a3fc9e50&app_key=5252ce9c184fc8ed83b5bc5f28db5b02.json";
+
+        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Success" + response);
+                TaskJsonConverter converter = new TaskJsonConverter();
+                List<local_bus_stops> bus_stops = converter.convertJsonStringToTask(response);
+                RecyclerView.Adapter adapter = new RecyclerViewAdapter(getApplicationContext(), local_bus_stops);
+                // Set the recycler views adapter
+                recyclerView.setAdapter(adapter);
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d(TAG, "Error" + error.getLocalizedMessage());
+
+            }
+        });
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(request);
+    }
+
     @Override
     public void onClick(View view) {
         // this method for onClick is for each button on the homepage to navigate to each page
         if (view.getId() == R.id.localBusButton){
             Intent intent = new Intent(getApplicationContext(), local_bus_stops.class);
             startActivity(intent);
+            getTasksFromCloud();
         } else if (view.getId() == R.id.busTimeTableButton){
             Intent intent = new Intent(getApplicationContext(), timetable.class);
             startActivity(intent);
@@ -92,6 +137,32 @@ public class home_page extends AppCompatActivity implements View.OnClickListener
             startActivity(intent);
         }
     }
+
+    public class TaskJsonConverter {
+        List<local_bus_stops> local_bus_stops = new ArrayList<local_bus_stops>();
+
+        public List<local_bus_stops> convertJsonStringToTask(String JsonString){
+            try {
+                JSONObject jsonObject = new JSONObject(JsonString);
+                JSONObject membersObject = jsonObject.getJSONObject("members");
+                Iterator<String> membersKeysIter = membersObject.keys();
+                while (membersKeysIter.hasNext()){
+                    String membersKey = membersKeysIter.next();
+                    JSONObject memberObject = membersObject.getJSONObject(membersKey);
+                    local_bus_stops bus_stop = new local_bus_stops();
+                    bus_stop.setName(membersObject.getString("name"));
+                    bus_stop.setTaskDescription(membersObject.getString("description"));
+                    local_bus_stops.add(bus_stop);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return local_bus_stops;
+        }
+    }
+
+
+
 
 
 

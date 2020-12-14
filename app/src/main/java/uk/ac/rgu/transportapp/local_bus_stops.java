@@ -7,6 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.tasks.Task;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.List;
+
+
 public class local_bus_stops extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -16,6 +24,8 @@ public class local_bus_stops extends AppCompatActivity implements View.OnClickLi
 
         // add click listeners for the home page button
         ((Button) findViewById(R.id.localBusStopHomeButton)).setOnClickListener(this);
+
+
     }
 
     @Override
@@ -25,5 +35,12 @@ public class local_bus_stops extends AppCompatActivity implements View.OnClickLi
             startActivity(intent);
         }
     }
+
+    public void setTaskDescription(String description) {
+    }
+
+    public void setName(String name) {
+    }
 }
+
 
